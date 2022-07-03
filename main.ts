@@ -118,8 +118,10 @@ forever(function () {
         if (controller.A.isPressed()) {
             for (let index = 0; index < 100; index++) {
                 pause(10)
-                statusbar.value += 0
+                statusbar.value += 1
             }
+            statusbar.value = 0
+            info.changeScoreBy(1)
         }
     } else {
         animation.runImageAnimation(
