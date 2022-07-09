@@ -1,7 +1,24 @@
 namespace SpriteKind {
     export const button = SpriteKind.create()
     export const minebutton = SpriteKind.create()
+    export const icon = SpriteKind.create()
 }
+namespace StatusBarKind {
+    export const ItemQuantity = StatusBarKind.create()
+    export const Cooldown = StatusBarKind.create()
+}
+let list = [
+0,
+1,
+1,
+0,
+0,
+2,
+0,
+0,
+3,
+4
+]
 tiles.setCurrentTilemap(tilemap`level1`)
 let mine_button = sprites.create(img`
     ................................
@@ -57,23 +74,20 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
-let list = [
-0,
-1,
-1,
-0,
-4,
-2,
-0,
-0,
-3
-]
-let statusbar = statusbars.create(32, 3, StatusBarKind.Health)
+let mySprite2 = sprites.create(assets.image`redgem`, SpriteKind.icon)
+mySprite2.setPosition(60, 10)
+let statusbar = statusbars.create(32, 3, StatusBarKind.Cooldown)
 statusbar.attachToSprite(mine_button, -8, 0)
 statusbar.positionDirection(CollisionDirection.Bottom)
 statusbar.value = 0
 statusbar.setColor(5, 11)
 statusbar.max = 100
+let statusbar2 = statusbars.create(30, 3, StatusBarKind.ItemQuantity)
+statusbar.setColor(5, 11)
+statusbar2.attachToSprite(mySprite2, -1, 0)
+statusbar2.value = 0
+statusbar2.positionDirection(CollisionDirection.Bottom)
+statusbar2.max = 10
 forever(function () {
     if (mySprite.overlapsWith(mine_button)) {
         animation.runImageAnimation(
@@ -120,8 +134,18 @@ forever(function () {
                 pause(10)
                 statusbar.value += 1
             }
+            if (list._pickRandom() == 0) {
+                statusbar2.value += 1
+            } else if (list._pickRandom() == 1) {
+                statusbar2.value += 1
+            } else if (list._pickRandom() == 2) {
+                statusbar2.value += 1
+            } else if (list._pickRandom() == 3) {
+                statusbar.value += 1
+            } else if (list._pickRandom() == 4) {
+                statusbar.value += 1
+            }
             statusbar.value = 0
-            info.changeScoreBy(1)
         }
     } else {
         animation.runImageAnimation(
