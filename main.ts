@@ -59,7 +59,7 @@ let mine_button = sprites.create(img`
     ................................
     `, SpriteKind.minebutton)
 mine_button.setPosition(20, 10)
-let mySprite = sprites.create(img`
+let cursor = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -77,7 +77,7 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite)
+controller.moveSprite(cursor)
 let mySprite2 = sprites.create(assets.image`redgem`, SpriteKind.icon)
 mySprite2.setPosition(60, 10)
 let mySprite3 = sprites.create(assets.image`bluegem`, SpriteKind.icon)
@@ -92,9 +92,14 @@ let statusbar2 = statusbars.create(30, 3, StatusBarKind.ItemQuantity)
 statusbar2.attachToSprite(mySprite2, -1, 0)
 statusbar2.value = 0
 statusbar2.positionDirection(CollisionDirection.Bottom)
-statusbar2.max = 10
+statusbar2.max = 20
+let statusbar3 = statusbars.create(30, 3, StatusBarKind.ItemQuantity)
+statusbar3.attachToSprite(mySprite3, -1, 0)
+statusbar3.value = 0
+statusbar3.positionDirection(CollisionDirection.Bottom)
+statusbar3.max = 15
 forever(function () {
-    if (mySprite.overlapsWith(mine_button)) {
+    if (cursor.overlapsWith(mine_button)) {
         animation.runImageAnimation(
         mine_button,
         [img`
@@ -177,25 +182,28 @@ forever(function () {
     }
 })
 forever(function () {
-    if (mySprite.overlapsWith(mine_button)) {
+    if (cursor.overlapsWith(mine_button)) {
         if (controller.A.isPressed()) {
+            let list2: number[] = []
             for (let index = 0; index < 100; index++) {
                 pause(10)
                 statusbar.value += 1
             }
-            if (list._pickRandom() == 0) {
+            list2[0] = list._pickRandom()
+            if (list2[0] == 0) {
                 statusbar2.value += 1
-            } else if (list._pickRandom() == 1) {
+            } else if (list2[0] == 1) {
                 statusbar2.value += 1
-            } else if (list._pickRandom() == 2) {
-                statusbar2.value += 1
-            } else if (list._pickRandom() == 3) {
-                statusbar2.value += 1
-            } else if (list._pickRandom() == 4) {
-                statusbar2.value += 1
+            } else if (list2[0] == 2) {
+                statusbar3.value += 1
+            } else if (list2[0] == 3) {
+                statusbar3.value += 1
+            } else if (list2[0] == 4) {
+                statusbar3.value += 1
             } else {
             	
             }
+            list2.pop()
             statusbar.value = 0
         }
     } else {
