@@ -28,11 +28,19 @@
     "level1": {
         "id": "level1",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAwYTAwMDgwMDAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMTAxMDEwMTAxMDIwMjAyMDIwMjAxMDEwMTAxMDEwMjAyMDIwMjAyMDEwMjAxMDEwMTAyMDIwMjAyMDIwMTAxMDEwMTAxMDIwMjAyMDIwMjAxMDEwMTAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjIyMg==",
+        "data": "MTAwYTAwMDgwMDA3MDkwOTA5MDkwOTA5MDkwOTA4MDUwMTAxMDEwMTAxMDIwMjAyMDYwNTAxMDEwMTAxMDEwMjAyMDIwNjA1MDEwMjAxMDEwMTAyMDIwMjA2MDUwMTAxMDEwMTAxMDIwMjAyMDYwNTAxMDEwMTAyMDIwMjAyMDIwNjA0MDIwMjAyMDIwMjAyMDIwMjAzMGEwYTBhMGEwYTBhMGEwYTBhMGEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjIyMg==",
         "tileset": [
             "myTiles.transparency16",
             "sprites.builtin.forestTiles10",
-            "myTiles.tile1"
+            "myTiles.tile1",
+            "sprites.builtin.forestTiles15",
+            "sprites.builtin.forestTiles13",
+            "sprites.builtin.forestTiles9",
+            "sprites.builtin.forestTiles11",
+            "sprites.builtin.forestTiles5",
+            "sprites.builtin.forestTiles7",
+            "sprites.builtin.forestTiles6",
+            "sprites.builtin.forestTiles12"
         ],
         "displayName": "level1"
     },

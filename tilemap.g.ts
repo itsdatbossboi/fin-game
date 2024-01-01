@@ -29,7 +29,7 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16], TileScale.Sixteen);
             case "level1":
-            case "level1":return tiles.createTilemap(hex`0a0008000202020202020202020202010101010102020202020101010101020202020201020101010202020202010101010102020202020101010202020202020202020202020202020202020202020202020202`, img`
+            case "level1":return tiles.createTilemap(hex`0a000800070909090909090909080501010101010202020605010101010102020206050102010101020202060501010101010202020605010101020202020206040202020202020202030a0a0a0a0a0a0a0a0a0a`, img`
 . . . . . . . . . . 
 . . . . . . . . . . 
 . . . . . . . . . . 
@@ -38,7 +38,7 @@ namespace myTiles {
 . . . . . . . . . . 
 . . . . . . . . . . 
 2 2 2 2 2 2 2 2 2 2 
-`, [myTiles.transparency16,sprites.builtin.forestTiles10,myTiles.tile1], TileScale.Sixteen);
+`, [myTiles.transparency16,sprites.builtin.forestTiles10,myTiles.tile1,sprites.builtin.forestTiles15,sprites.builtin.forestTiles13,sprites.builtin.forestTiles9,sprites.builtin.forestTiles11,sprites.builtin.forestTiles5,sprites.builtin.forestTiles7,sprites.builtin.forestTiles6,sprites.builtin.forestTiles12], TileScale.Sixteen);
         }
         return null;
     })

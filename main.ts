@@ -58,30 +58,29 @@ let mine_button = sprites.create(img`
     ................................
     ................................
     `, SpriteKind.minebutton)
-mine_button.setPosition(20, 10)
+mine_button.setPosition(25, 15)
 let cursor = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . d d d 1 1 d d d . . . . 
-    . . . . d d d 1 1 d d d . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . . . . d d . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . 1 . . . . . . . 
+    . . . . . . . 1 . . . . . . . 
+    . . . . . 1 1 d 1 1 . . . . . 
+    . . . . . . . 1 . . . . . . . 
+    . . . . . . . 1 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(cursor)
 let mySprite2 = sprites.create(assets.image`redgem`, SpriteKind.icon)
-mySprite2.setPosition(60, 10)
+mySprite2.setPosition(65, 15)
 let mySprite3 = sprites.create(assets.image`bluegem`, SpriteKind.icon)
-mySprite3.setPosition(100, 10)
+mySprite3.setPosition(105, 15)
 let statusbar = statusbars.create(32, 3, StatusBarKind.Cooldown)
 statusbar.attachToSprite(mine_button, -8, 0)
 statusbar.positionDirection(CollisionDirection.Bottom)
